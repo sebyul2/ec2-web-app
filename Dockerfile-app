@@ -6,9 +6,7 @@ RUN mkdir -p /data/web-app
 WORKDIR /data/web-app
 ADD ./web-app /data/web-app
 RUN npm install && \
-    npm install pm2 && \
-
-    
+    npm install pm2  
 
 ENV NODE_ENV development
 

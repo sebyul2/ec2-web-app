@@ -12,7 +12,6 @@ WORKDIR /etc/nginx
 
 ADD ./nginx /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/web-app /etc/nginx/sites-enabled/web-app
-RUN service nginx start
 
 CMD ["nginx"]
 

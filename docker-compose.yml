@@ -1,9 +1,9 @@
 version: '2'
 services:
-  mynginx:
+  nginx:
     build: 
-      context: ./Resource/compose
-      dockerfile: Dockerfile-mynginx
+      context: ./
+      dockerfile: Dockerfile-nginx
     links:
       - app
     ports:
@@ -12,7 +12,7 @@ services:
       -  .:/data/web-app
   app:
     build: 
-      context: ./Resource/compose
+      context: ./
       dockerfile: Dockerfile-app
     ports:
       - "4000:4000"

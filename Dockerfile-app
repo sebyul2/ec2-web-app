@@ -4,11 +4,11 @@ MAINTAINER Byul <seyul3@gmail.com>
 
 RUN mkdir -p /data/web-app
 WORKDIR /data/web-app
-ADD ./ /data/web-app
+ADD ./web-app /data/web-app
 RUN npm install
 
 ENV NODE_ENV development
 
-EXPOSE 4001
+EXPOSE 4000
 
 CMD ["npm", "start"]

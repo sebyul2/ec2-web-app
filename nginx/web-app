@@ -11,13 +11,8 @@ server {
     proxy_buffer_size 64m;
 
     location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|rtf|js|flv|swf|html|htm|woff|ttf|cur|svg)$ {
-        proxy_cache cache;
-        proxy_cache_valid 30m;
-    }
-
-    location /static {
-    	proxy_cache cache;
-	    proxy_cache_valid 30m;
+        expires 1M;
+        add_header Cache-Control "public";
     }
 
     location / {

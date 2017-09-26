@@ -1,5 +1,14 @@
 version: '2'
+networks:
+  front:
+  back:
 services:
+  app:
+    build: 
+      context: ./
+      dockerfile: Dockerfile-app
+    ports:
+      - "4000:4000"
   nginx:
     depends_on:
       app:
@@ -13,9 +22,6 @@ services:
       - "80:80"
     volumes:
       -  .:/data/web-app
-  app:
-    build: 
-      context: ./
-      dockerfile: Dockerfile-app
-    ports:
-      - "4000:4000"
+    networks:
+    - front
+    - back

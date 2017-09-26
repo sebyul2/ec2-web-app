@@ -1,7 +1,4 @@
 version: '2.1'
-networks:
-  front:
-  back:
 services:
   app:
     build: 
@@ -9,8 +6,6 @@ services:
       dockerfile: Dockerfile-app
     ports:
       - "4000:4000"
-    networks:
-      - back
   nginx:
     build: 
       context: ./
@@ -24,6 +19,3 @@ services:
         condition: service_started
     volumes:
       -  .:/data/web-app
-    networks:
-    - front
-    - back

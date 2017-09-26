@@ -13,5 +13,7 @@ WORKDIR /etc/nginx
 ADD ./nginx /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/web-app /etc/nginx/sites-enabled/web-app
 
+CMD ["nginx"]
+
 EXPOSE 80
 EXPOSE 443

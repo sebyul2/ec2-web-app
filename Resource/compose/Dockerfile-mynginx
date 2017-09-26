@@ -1,0 +1,20 @@
+FROM ubuntu:latest
+MAINTAINER byul <sebyul3@gmail.com>
+
+RUN apt-get update && \
+    apt-get install -y nginx && \
+    echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
+    chown -R www-data:www-data /var/lib/nginx && \
+
+VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
+
+WORKDIR /etc/nginx
+
+COPY ./compose/web-app /etc/nginx/sites-available/web-app
+RUN ln -s /etc/nginx/sites-available/web-app /etc/nginx/sites-enabled/web-app
+RUN nginx -s reload
+
+CMD ["nginx"]
+
+EXPOSE 80
+EXPOSE 443

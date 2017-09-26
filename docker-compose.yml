@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mynginx:
+    build: 
+      context: ./Resource/compose
+      dockerfile: Dockerfile-mynginx
+    links:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      -  .:/data/web-app
+  app:
+    build: 
+      context: ./Resource/compose
+      dockerfile: Dockerfile-app
+    ports:
+      - "4000:4000"

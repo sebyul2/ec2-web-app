@@ -4,7 +4,7 @@ MAINTAINER byul <sebyul3@gmail.com>
 RUN apt-get update && \
     apt-get install -y nginx && \
     echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-    chown -R www-data:www-data /var/lib/nginx && \
+    chown -R www-data:www-data /var/lib/nginx
 
 VOLUME ["/data", "/etc/nginx/site-enabled", "/var/log/nginx"]
 

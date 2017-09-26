@@ -2,7 +2,8 @@ version: '2'
 services:
   nginx:
     depends_on:
-      - app
+      app:
+        condition: service_started
     build: 
       context: ./
       dockerfile: Dockerfile-nginx

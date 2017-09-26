@@ -1,23 +1,9 @@
-upstream web-app {
-    server app:4000;
-}
-
 server {
     listen      80 default_server;
     server_name _;
 
-    proxy_max_temp_file_size 8192m;
-    proxy_buffers 8 64m;
-    proxy_buffer_size 64m;
-
-    location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|rtf|js|flv|swf|html|htm|woff|ttf|cur|svg)$ {
-        expires 1M;
-        add_header Cache-Control "public";
-    }
-
     location / {
         expires -1;
-        proxy_pass http://web-app;
-        proxy_redirect  off;
+        proxy_pass http://app:4000;
     }
 }

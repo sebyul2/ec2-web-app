@@ -10,7 +10,7 @@ VOLUME ["/data", "/etc/nginx/sites-enabled", "/var/log/nginx"]
 
 WORKDIR /etc/nginx
 
-COPY ./nginx/web-app /etc/nginx/sites-available/web-app
+ADD ./nginx/ /etc/nginx/sites-available/
 RUN cd /etc/nginx/sites-available/ && \
     ln -s web-app /etc/nginx/sites-enabled/web-app && \
     rm default

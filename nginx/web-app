@@ -1,5 +1,5 @@
 upstream web-app {
-    server app:4000;
+    server localhost:4000;
 }
 
 server {

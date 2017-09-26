@@ -4,7 +4,6 @@ upstream app {
 
 server {
     listen       80;
-    server_name	_;
 
     proxy_max_temp_file_size 8192m;
     proxy_buffers 8 64m;

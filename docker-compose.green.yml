@@ -12,3 +12,7 @@ services:
       dockerfile: Dockerfile-app
     networks: 
       - proxy-tier
+networks:
+  proxy-tier:
+    external:
+      name: _default

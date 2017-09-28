@@ -16,11 +16,11 @@ services:
       context: ./
       dockerfile: Dockerfile-nginx
     links:
-      - app
+      - app-green
     ports:
       - "80:81"
     depends_on:
-      app:
+      app-green:
         condition: service_started
     volumes:
       -  .:/data/web-app

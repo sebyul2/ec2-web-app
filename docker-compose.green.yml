@@ -5,6 +5,8 @@ services:
      - NODE_ENV=development
      - PORT=4001
     command: npm start
+    ports:
+      - "4001:4001"
     build: 
       context: ./
       dockerfile: Dockerfile-app

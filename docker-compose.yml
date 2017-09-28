@@ -27,6 +27,4 @@ services:
         condition: service_started
     volumes:
       -  .:/data/web-app
-    networks: 
-      _default:
-        driver: bridge
+    networks: web-app

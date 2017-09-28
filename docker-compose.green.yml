@@ -1,7 +1,10 @@
 version: '2.1'
 services:
   app:
-    command: PORT=4001 npm start
+    environment:
+     - NODE_ENV=development
+     - PORT=4001
+    command: npm start
     build: 
       context: ./
       dockerfile: Dockerfile-app

@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  app-green:
+  app:
     environment:
      - NODE_ENV=development
      - PORT=4001
@@ -10,17 +10,17 @@ services:
       dockerfile: Dockerfile-app
     ports:
       - "4000:4001"
-  nginx-green:
+  nginx:
     command: nginx
     build: 
       context: ./
       dockerfile: Dockerfile-nginx
     links:
-      - app-green
+      - app
     ports:
       - "80:81"
     depends_on:
-      app-green:
+      app:
         condition: service_started
     volumes:
       -  .:/data/web-app

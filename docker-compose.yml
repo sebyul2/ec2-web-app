@@ -4,7 +4,7 @@ services:
     environment:
      - NODE_ENV=development
      - PORT=4001
-    command: npm start-green
+    command: npm start_green
     build: 
       context: ./
       dockerfile: Dockerfile-app

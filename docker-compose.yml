@@ -10,6 +10,9 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile-app
+    networks: 
+      _default:
+        driver: bridge
   nginx:
     command: nginx
     build: 
@@ -24,3 +27,6 @@ services:
         condition: service_started
     volumes:
       -  .:/data/web-app
+    networks: 
+      _default:
+        driver: bridge

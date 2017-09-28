@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: Dockerfile-app
     ports:
-      - "4001:4000"
+      - "4000:4001"
   nginx:
     command: nginx
     build: 
@@ -15,7 +15,7 @@ services:
     links:
       - app
     ports:
-      - "81:80"
+      - "80:81"
     depends_on:
       app:
         condition: service_started

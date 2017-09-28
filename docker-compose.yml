@@ -18,7 +18,7 @@ services:
     links:
       - app
     ports:
-      - "80:80"
+      - "80:81"
     depends_on:
       app:
         condition: service_started

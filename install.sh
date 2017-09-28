@@ -10,4 +10,3 @@ git pull origin develop
 
 docker-compose -p ${DOCKER_APP_NAME} -f docker-compose.yml up -d
 docker-compose -p ${DOCKER_APP_NAME}-blue -f docker-compose.blue.yml up -d
-

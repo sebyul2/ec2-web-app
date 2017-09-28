@@ -1,9 +1,13 @@
+upstream web-app {
+    server app:4000;
+}
+
 server {
     listen      80 default_server;
     server_name _;
 
     location / {
         expires -1;
-        proxy_pass http://app:4000;
+        proxy_pass http://web-app;
     }
 }

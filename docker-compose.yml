@@ -11,7 +11,7 @@ services:
       context: ./
       dockerfile: Dockerfile-app
     networks: 
-      - web-app
+      - _default
   nginx:
     command: nginx
     build: 
@@ -27,4 +27,4 @@ services:
     volumes:
       -  .:/data/web-app
     networks: 
-      - web-app
+      - _default

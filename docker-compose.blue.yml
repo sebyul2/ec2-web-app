@@ -8,17 +8,3 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile-app
-  nginx:
-    command: nginx
-    build: 
-      context: ./
-      dockerfile: Dockerfile-nginx
-    links:
-      - app
-    ports:
-      - "80:80"
-    depends_on:
-      app:
-        condition: service_started
-    volumes:
-      -  .:/data/web-app

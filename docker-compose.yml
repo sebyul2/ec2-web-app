@@ -3,13 +3,11 @@ services:
   app:
     environment:
      - NODE_ENV=development
-     - PORT=4001
+     - PORT=4000
     command: npm start
     build: 
       context: ./
       dockerfile: Dockerfile-app
-    ports:
-      - "4001:4001"
   nginx:
     command: nginx
     build: 
@@ -18,7 +16,7 @@ services:
     links:
       - app
     ports:
-      - "80:81"
+      - "80:80"
     depends_on:
       app:
         condition: service_started

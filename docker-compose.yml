@@ -11,7 +11,7 @@ services:
       context: ./
       dockerfile: Dockerfile-app
     networks: 
-      - _default
+      - proxy-tier
   nginx:
     command: nginx
     build: 
@@ -27,4 +27,8 @@ services:
     volumes:
       -  .:/data/web-app
     networks: 
-      - _default
+      - proxy-tier
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy

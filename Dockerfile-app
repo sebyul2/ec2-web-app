@@ -6,5 +6,3 @@ RUN mkdir -p /data/web-app
 WORKDIR /data/web-app
 COPY ./web-app /data/web-app
 RUN npm install
-
-ENV NODE_ENV development

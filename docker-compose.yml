@@ -1,12 +1,15 @@
 version: '2.1'
 services:
   app:
-    command: npm start-blue
+    command: npm start
     build: 
       context: ./
       dockerfile: Dockerfile-app
     ports:
       - "4001:4001"
+    environment:
+     - NODE_ENV=development
+     - PORT=4001
   nginx:
     command: nginx
     build: 
@@ -15,7 +18,7 @@ services:
     links:
       - app
     ports:
-      - "80:81"
+      - "80:80"
     depends_on:
       app:
         condition: service_started

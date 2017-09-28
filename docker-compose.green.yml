@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  app:
+  app-green:
     environment:
      - NODE_ENV=development
      - PORT=4001
@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile-app
     ports:
       - "4000:4001"
-  nginx:
+  nginx-green:
     command: nginx
     build: 
       context: ./

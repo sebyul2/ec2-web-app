@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "start-blue": "PORT=4000 node app.js",
+    "start-green": "PORT=4001 node app.js"
   },
   "repository": {
     "type": "git",

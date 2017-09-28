@@ -31,4 +31,4 @@ services:
 networks:
   proxy-tier:
     external:
-      name: nginx-proxy
+      name: _default

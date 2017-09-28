@@ -10,4 +10,8 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile-app
-    networks: web-app
+    networks:
+      - web-app
+networks: 
+  web-app:
+    driver: default

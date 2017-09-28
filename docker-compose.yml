@@ -11,8 +11,7 @@ services:
       context: ./
       dockerfile: Dockerfile-app
     networks: 
-      _default:
-        driver: bridge
+      - web-app
   nginx:
     command: nginx
     build: 
@@ -27,4 +26,8 @@ services:
         condition: service_started
     volumes:
       -  .:/data/web-app
-    networks: web-app
+    networks: 
+      - web-app
+networks: 
+  web-app:
+    driver: default

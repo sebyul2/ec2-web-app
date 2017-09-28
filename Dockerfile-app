@@ -8,5 +8,3 @@ COPY ./web-app /data/web-app
 RUN npm install
 
 ENV NODE_ENV development
-
-EXPOSE 4000

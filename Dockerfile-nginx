@@ -11,6 +11,3 @@ VOLUME ["/data", "/etc/nginx/sites-enabled", "/var/log/nginx"]
 WORKDIR /etc/nginx
 
 COPY nginx/web-app /etc/nginx/sites-available/default
-
-EXPOSE 80
-EXPOSE 443

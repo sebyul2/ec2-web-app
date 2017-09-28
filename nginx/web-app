@@ -1,13 +1,27 @@
-upstream web-app {
+upstream app-blue {
     server app:4000;
 }
 
+upstream app-green {
+    server app:4001;
+}
+
 server {
-    listen      80 default_server;
+    listen      80;
     server_name _;
 
     location / {
         expires -1;
-        proxy_pass http://web-app;
+        proxy_pass http://app-blue;
+    }
+}
+
+server {
+    listen      81;
+    server_name _;
+
+    location / {
+        expires -1;
+        proxy_pass http://app-green;
     }
 }

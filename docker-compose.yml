@@ -28,6 +28,3 @@ services:
       -  .:/data/web-app
     networks: 
       - web-app
-networks: 
-  web-app:
-    driver: default

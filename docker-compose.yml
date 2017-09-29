@@ -1,34 +1,15 @@
 version: '2.1'
 services:
-  app:
-    environment:
-     - NODE_ENV=development
-     - PORT=4000
-    command: npm start
-    ports:
-      - "4000:4000"
-    build: 
-      context: ./
-      dockerfile: Dockerfile-app
-    networks: 
-      - proxy-tier
   nginx:
     command: nginx
     build: 
       context: ./
       dockerfile: Dockerfile-nginx
-    links:
-      - app
     ports:
       - "80:80"
-    depends_on:
-      app:
-        condition: service_started
+    # depends_on:
+    #   app:
+    #     condition: service_started
     volumes:
       -  .:/data/web-app
-    networks: 
-      - proxy-tier
-networks:
-  proxy-tier:
-    external:
-      name: _default
+    network_mode: "host"

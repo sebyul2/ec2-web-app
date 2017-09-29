@@ -9,14 +9,14 @@ if [ -z "$EXIST_BLUE" ]; then
     docker-compose -p ${DOCKER_APP_NAME}-blue -f docker-compose.blue.yml build
     docker-compose -p ${DOCKER_APP_NAME}-blue -f docker-compose.blue.yml up -d
 
-    sleep 4
+    sleep 8
 
     docker-compose -p ${DOCKER_APP_NAME}-green -f docker-compose.green.yml down
 else
     docker-compose -p ${DOCKER_APP_NAME}-green -f docker-compose.green.yml build
     docker-compose -p ${DOCKER_APP_NAME}-green -f docker-compose.green.yml up -d
 
-    sleep 4
+    sleep 8
 
     docker-compose -p ${DOCKER_APP_NAME}-blue -f docker-compose.blue.yml down
 fi

@@ -3,6 +3,7 @@ var app = express();
 var port = process.env.PORT;
 
 app.get('/', function (req, res) {
+    console.log('request on');
     res.send('Hello green test World!');
 });
 

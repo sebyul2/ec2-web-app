@@ -1,6 +1,6 @@
 FROM node:latest
 
-MAINTAINER Byul <seyul3@gmail.com>
+MAINTAINER Byul <sebyul@technoblood.com>
 
 RUN mkdir -p /data/web-app
 WORKDIR /data/web-app
